@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 const router = require("./routes/resumes.routes");
 const db = require("./config/database");
@@ -7,6 +8,7 @@ const db = require("./config/database");
 dotenv.config();
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 const port = process.env.PORT || 8080;
 
